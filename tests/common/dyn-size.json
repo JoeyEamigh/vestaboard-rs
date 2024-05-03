@@ -1,0 +1,374 @@
+[
+  {
+    "name": "JS Spec: Single Component",
+    "data": {
+      "style": {
+        "height": 1,
+        "width": 2
+      },
+      "components": [
+        {
+          "template": "hi"
+        }
+      ]
+    },
+    "expect": [
+      [
+        8,
+        9
+      ]
+    ]
+  },
+  {
+    "name": "JS Spec: Side by Side",
+    "data": {
+      "style": {
+        "height": 1,
+        "width": 4
+      },
+      "components": [
+        {
+          "template": "hi",
+          "style": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "template": "hi",
+          "style": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      ]
+    },
+    "expect": [
+      [
+        8,
+        9,
+        8,
+        9
+      ]
+    ]
+  },
+  {
+    "name": "JS Spec: Vertical Stack",
+    "data": {
+      "style": {
+        "height": 2,
+        "width": 2
+      },
+      "components": [
+        {
+          "template": "hi",
+          "style": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "template": "hi",
+          "style": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      ]
+    },
+    "expect": [
+      [
+        8,
+        9
+      ],
+      [
+        8,
+        9
+      ]
+    ]
+  },
+  {
+    "name": "JS Spec: Flow Component",
+    "data": {
+      "style": {
+        "height": 2,
+        "width": 4
+      },
+      "components": [
+        {
+          "template": "{1}{2}",
+          "style": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "template": "{3}{4}",
+          "style": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "template": "{5}{6}",
+          "style": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      ]
+    },
+    "expect": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        6,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "name": "JS Spec: Justify Vertically",
+    "data": {
+      "style": {
+        "height": 5,
+        "width": 1
+      },
+      "components": [
+        {
+          "template": "abcd",
+          "style": {
+            "height": 5,
+            "width": 1,
+            "align": "justified"
+          }
+        }
+      ]
+    },
+    "expect": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "name": "JS Spec: Justify Vertically 2",
+    "data": {
+      "style": {
+        "height": 5,
+        "width": 1
+      },
+      "components": [
+        {
+          "template": "abc",
+          "style": {
+            "height": 5,
+            "width": 1,
+            "align": "justified"
+          }
+        }
+      ]
+    },
+    "expect": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "name": "JS Spec: Raw Components",
+    "data": {
+      "style": {
+        "height": 6,
+        "width": 22
+      },
+      "components": [
+        {
+          "rawCharacters": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    "expect": [
+      [
+        1,
+        2,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  }
+]

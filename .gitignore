@@ -1,0 +1,13 @@
+target
+.env
+
+# benchmarks
+benchmark/js/**
+!benchmark/js/README.md
+!benchmark/js/package.json
+!benchmark/js/index.js
+
+benchmark/out/**
+!benchmark/out/.gitkeep
+
+perf.data*

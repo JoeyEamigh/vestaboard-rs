@@ -1,0 +1,54 @@
+[package]
+name = "vestaboard"
+version = "0.1.0"
+edition = "2021"
+resolver = "2"
+rust-version = "1.77"
+description = "a wrapper for the Vestaboard API with support for v2"
+repository = "https://github.com/JoeyEamigh/vestaboard-rs.git"
+documentation = "https://github.com/JoeyEamigh/vestaboard-rs"
+homepage = "https://github.com/JoeyEamigh/vestaboard-rs"
+keywords = ["vestaboard", "api"]
+readme = "README.md"
+license = "MIT"
+
+[dependencies]
+lazy_static = "1.4.0"
+regex = "1.10.4"
+reqwest = { version = "0.12.4", features = ["json"], optional = true }
+serde = { version = "1.0.199", features = ["derive"] }
+serde_json = "1.0.116"
+serde_with = { version = "3.8.1", features = ["json"] }
+thiserror = "1.0.59"
+tracing = "0.1.40"
+
+[dev-dependencies]
+comfy-table = "7.1.1"
+criterion = "0.5.1"
+dotenv = "0.15.0"
+libtest-mimic = "0.7.2"
+thousands = "0.2.0"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+
+[features]
+default = ["parser"]
+
+full = ["rw", "subscription", "local", "parser"]
+parser = []
+rw = ["dep:reqwest"]
+subscription = ["dep:reqwest"]
+local = ["dep:reqwest"]
+
+[[test]]
+name = "vbml"
+harness = false
+
+[[bench]]
+name = "vbml"
+path = "benchmark/vbml.rs"
+harness = false
+
+[[example]]
+name = "interpret"
+path = "benchmark/interpret.rs"
+required-features = ["parser"]

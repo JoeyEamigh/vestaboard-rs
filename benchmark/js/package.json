@@ -1,0 +1,13 @@
+{
+  "name": "vbml-js-benchmark",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "bench": "node --max-old-space-size=16384 --no-warnings=ExperimentalWarning index.js"
+  },
+  "dependencies": {
+    "@vestaboard/vbml": "^1.2.0",
+    "tinybench": "^2.8.0"
+  }
+}
