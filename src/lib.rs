@@ -1,25 +1,34 @@
+#![cfg_attr(docsrs, feature(doc_cfg))]
 #![doc = include_str!("../README.md")]
 
 pub mod board;
 
-#[cfg(feature = "local")]
+#[cfg(any(feature = "local", doc))]
+#[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 pub mod local;
-#[cfg(feature = "rw")]
+#[cfg(any(feature = "rw", doc))]
+#[cfg_attr(docsrs, doc(cfg(feature = "rw")))]
 pub mod rw;
-#[cfg(feature = "subscription")]
+#[cfg(any(feature = "subscription", doc))]
+#[cfg_attr(docsrs, doc(cfg(feature = "subscription")))]
 pub mod subscription;
-#[cfg(feature = "parser")]
+#[cfg(any(feature = "parser", doc))]
+#[cfg_attr(docsrs, doc(cfg(feature = "parser")))]
 pub mod vbml;
 
 // reexports
 pub use board::{BoardData, CharacterCode};
-#[cfg(feature = "local")]
+#[cfg(any(feature = "local", doc))]
+#[cfg_attr(docsrs, doc(cfg(feature = "local")))]
 pub use local::{LocalApiError, LocalConfig};
-#[cfg(feature = "rw")]
+#[cfg(any(feature = "rw", doc))]
+#[cfg_attr(docsrs, doc(cfg(feature = "rw")))]
 pub use rw::{RWApiError, RWApiReadMessage, RWApiWriteResponse, RWConfig};
-#[cfg(feature = "subscription")]
+#[cfg(any(feature = "subscription", doc))]
+#[cfg_attr(docsrs, doc(cfg(feature = "subscription")))]
 pub use subscription::{SubscriptionApiError, SubscriptionConfig, SubscriptionMessageResponse, SubscriptionsList};
-#[cfg(feature = "parser")]
+#[cfg(any(feature = "parser", doc))]
+#[cfg_attr(docsrs, doc(cfg(feature = "parser")))]
 pub use vbml::Vbml;
 
 /// the main struct for interacting with the Vestaboard api. \
@@ -137,7 +146,8 @@ pub use vbml::Vbml;
 /// # api docs
 ///
 /// <https://docs.vestaboard.com/>
-#[cfg(any(feature = "rw", feature = "subscription", feature = "local"))]
+#[cfg(any(feature = "rw", feature = "subscription", feature = "local", doc))]
+#[cfg_attr(docsrs, doc(cfg(any(feature = "rw", feature = "subscription", feature = "local"))))]
 #[derive(Debug, Clone)]
 pub struct Vestaboard<T, const ROWS: usize = { board::FLAGSHIP_ROWS }, const COLS: usize = { board::FLAGSHIP_COLS }> {
   client: reqwest::Client,

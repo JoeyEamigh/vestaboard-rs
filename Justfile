@@ -7,6 +7,10 @@ test:
   cargo nextest run -F full
   echo "done!"
 
+doc:
+  echo "generating documentation..."
+  cargo +nightly doc --all-features
+  echo "done!"
 
 # benchmark the js and rust vbml implementations
 bench:

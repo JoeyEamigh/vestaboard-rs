@@ -1,6 +1,6 @@
 [package]
 name = "vestaboard"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 resolver = "2"
 rust-version = "1.77"
@@ -38,6 +38,10 @@ parser = []
 rw = ["dep:reqwest"]
 subscription = ["dep:reqwest"]
 local = ["dep:reqwest"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
 
 [[test]]
 name = "vbml"

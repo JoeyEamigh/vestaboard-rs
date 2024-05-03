@@ -1,3 +1,5 @@
+//! # VBML Parser (requires `parser` feature)
+//!
 //! Vestaboard Markup Language (VBML) is a simple markup language for creating Vestaboard messages.
 //! it is a JSON object that adheres to the type [`Vbml<ROWS, COLS>`]. learn more at <https://docs.vestaboard.com/docs/vbml>.
 //!
