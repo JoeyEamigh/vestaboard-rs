@@ -8,7 +8,7 @@ description = "a wrapper for the Vestaboard API with support for v2"
 repository = "https://github.com/JoeyEamigh/vestaboard-rs.git"
 documentation = "https://github.com/JoeyEamigh/vestaboard-rs"
 homepage = "https://github.com/JoeyEamigh/vestaboard-rs"
-keywords = ["vestaboard", "api"]
+keywords = ["vestaboard", "api", "vbml", "parser", "api-client"]
 readme = "README.md"
 license = "MIT"
 
